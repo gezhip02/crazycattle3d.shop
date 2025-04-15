@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore comprehensive guides and tutorials for Crazy Cattle 3D. From beginner tips to advanced strategies, find everything you need to master the game.">
+    <title>Game Guides - Crazy Cattle 3D</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/guides.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Guides Page Specific Styles */
+        .guides-container {
+            max-width: 1200px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
+        }
+
+        .guides-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .guides-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .guides-header p {
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Filter Section */
+        .guides-filter {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: var(--border-radius);
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .filter-tag {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background: white;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-tag:hover,
+        .filter-tag.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Articles Grid */
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .guide-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .guide-card-content {
+            padding: 1.5rem;
+        }
+
+        .guide-card-content h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-card-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .guide-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .guide-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .guide-tag {
+            font-size: 0.8rem;
+            padding: 0.2rem 0.5rem;
+            background: var(--light-bg);
+            border-radius: 12px;
+        }
+
+        .read-more {
+            display: inline-block;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--primary-hover);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .guides-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .guides-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guides-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Crazy Cattle 3D</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#download">Download Game</a>
+                <a href="index.html#how-to-play">How to Play</a>
+                <a href="index.html#faq">FAQ</a>
+                <a href="guides.html" class="active">Guides</a>
+            </div>
+            <div class="nav-right">
+                <div class="theme-toggle"></div>
+                <div class="lang-toggle"></div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="guides-container">
+        <div class="guides-header">
+            <h1>Game Guides</h1>
+            <p class="guides-intro">Master Crazy Cattle 3D with our comprehensive collection of guides. Whether you're just starting out or looking to perfect your skills, we've got you covered.</p>
+        </div>
+
+        <div class="guides-filter">
+            <div class="filter-tags">
+                <button class="filter-tag active" data-category="all">All Guides</button>
+                <button class="filter-tag" data-category="beginner">Beginner</button>
+                <button class="filter-tag" data-category="advanced">Advanced</button>
+                <button class="filter-tag" data-category="maps">Maps</button>
+                <button class="filter-tag" data-category="updates">Updates</button>
+            </div>
+        </div>
+
+        <div class="guides-grid">
+            <article class="guide-card" data-categories="beginner">
+                <img src="images/getting-started-guide-card.jpg" alt="Getting Started Guide Thumbnail" />
+                <div class="guide-content">
+                    <h2>Getting Started Guide</h2>
+                    <p>New to Crazy Cattle 3D? Learn the basics of controls, game modes, and essential strategies to begin your journey.</p>
+                    <a href="articles/getting-started-guide.html" class="read-guide">
+                        Read Guide <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="guide-card" data-categories="advanced">
+                <img src="images/advanced-tactics-guide-card.jpg" alt="Advanced Combat Tactics Thumbnail" />
+                <div class="guide-content">
+                    <h2>Advanced Combat Tactics</h2>
+                    <p>Take your gameplay to the next level with pro strategies, advanced movement techniques, and combat mastery.</p>
+                    <a href="articles/advanced-tactics.html" class="read-guide">
+                        Read Guide <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="guide-card" data-categories="maps">
+                <img src="images/map-guide-card.jpg" alt="Complete Map Guide Thumbnail" />
+                <div class="guide-content">
+                    <h2>Complete Map Guide</h2>
+                    <p>Explore detailed strategies for every map, including power-up locations, optimal routes, and tactical positions.</p>
+                    <a href="articles/map-guide.html" class="read-guide">
+                        Read Guide <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="guide-card" data-categories="updates">
+                <img src="images/update-notes-guide-card.jpg" alt="Latest Update Notes Thumbnail" />
+                <div class="guide-content">
+                    <h2>Latest Update Notes</h2>
+                    <p>Stay informed about the newest features, balance changes, and improvements in Crazy Cattle 3D Version 2.4.0.</p>
+                    <a href="articles/update-notes.html" class="read-guide">
+                        Read Guide <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="guide-card" data-categories="advanced">
+                <img src="images/physics-system.jpg" alt="Physics System Guide Thumbnail" />
+                <div class="guide-content">
+                    <h2>Physics System Mastery</h2>
+                    <p>Perfect your mechanical skills for tournament play with our comprehensive physics guide.</p>
+                    <a href="articles/mastering-physics.html" class="read-guide">
+                        Read Guide <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="guide-card" data-categories="beginner">
+                <img src="images/installation-banner.jpg" alt="Installation Guide Thumbnail" />
+                <div class="guide-content">
+                    <h2>Installation Guide</h2>
+                    <p>Get started with a complete walkthrough of installing and setting up Crazy Cattle 3D on your system.</p>
+                    <a href="articles/installation-guide.html" class="read-guide">
+                        Read Guide <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <article class="guide-card" data-categories="advanced">
+                <img src="images/competitive-play.jpg" alt="Competitive Strategies Thumbnail" />
+                <div class="guide-content">
+                    <h2>Competitive Strategies</h2>
+                    <p>Learn advanced tournament strategies and competitive play techniques from top players.</p>
+                    <a href="articles/competitive-strategies.html" class="read-guide">
+                        Read Guide <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Game Info</h3>
+                    <p>Crazy Cattle 3D is an innovative battle royale game featuring explosive sheep warfare across stunning landscapes.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="index.html#download">Download</a></li>
+                        <li><a href="index.html#how-to-play">How to Play</a></li>
+                        <li><a href="index.html#faq">FAQ</a></li>
+                        <li><a href="guides.html">Guides</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 crazycattle3d.shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Guide filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterTags = document.querySelectorAll('.filter-tag');
+            const guideCards = document.querySelectorAll('.guide-card');
+
+            filterTags.forEach(tag => {
+                tag.addEventListener('click', function() {
+                    // Remove active class from all tags
+                    filterTags.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked tag
+                    this.classList.add('active');
+
+                    const selectedCategory = this.getAttribute('data-category');
+
+                    guideCards.forEach(card => {
+                        if (selectedCategory === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            const cardCategories = card.getAttribute('data-categories').split(' ');
+                            if (cardCategories.includes(selectedCategory)) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,49 +1,389 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的 Cloudflare Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 2rem;
-      margin: 0;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-    header, footer {
-      text-align: center;
-      padding: 1rem 0;
-      background-color: #fff;
-      border-bottom: 1px solid #ddd;
-      margin-bottom: 2rem;
-    }
-    footer {
-      border-top: 1px solid #ddd;
-      border-bottom: none;
-      margin-top: 2rem;
-    }
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: #fff;
-      padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crazy Cattle 3D - A Unique Battle Royale Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Guides Preview Section Styles */
+        .guides-preview {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .guides-preview .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .guides-preview h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .guides-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .guide-preview-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .guide-preview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .guide-preview-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .guide-preview-content {
+            padding: 20px;
+        }
+
+        .guide-preview-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .guide-preview-content p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .view-all-guides {
+            text-align: center;
+        }
+
+        .view-all-guides .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .view-all-guides .cta-button:hover {
+            background: var(--primary-hover);
+        }
+
+        @media (max-width: 1024px) {
+            .guides-preview-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .guides-preview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>欢迎访问我的 Cloudflare Page</h1>
-  </header>
-  <main>
-    <p>这是一个简单的静态 HTML 页面示例，你可以在这里部署你的网站内容。</p>
-    <p>将此项目连接到 Cloudflare Pages 后，每次更新提交你的代码即可自动部署新版本。</p>
-  </main>
-  <footer>
-    <p>&copy; 2025 我的公司. 保留所有权利.</p>
-  </footer>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Crazy Cattle 3D</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#download">Download Game</a>
+                <a href="#how-to-play">How to Play</a>
+                <a href="#faq">FAQ</a>
+                <a href="guides.html">Guides</a>
+            </div>
+            <div class="nav-right">
+                <!-- Placeholder for theme and language toggles -->
+                <div class="theme-toggle"></div>
+                <div class="lang-toggle"></div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Crazy Cattle 3D</h1>
+            <p>Experience an exhilarating battle royale where explosive sheep compete for survival across varied terrain. Master physics-based gameplay and outmaneuver your opponents in this unique gaming experience.</p>
+            <button class="cta-button" id="downloadNowBtn">
+                <i class="fas fa-download"></i> Download Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2>Download Crazy Cattle 3D</h2>
+            <p class="subtitle">A downloadable experience for Windows, macOS, and Linux</p>
+            <div class="download-cards">
+                <div class="download-card">
+                    <i class="fab fa-windows"></i>
+                    <h3>Windows</h3>
+                    <p class="filename">CrazyCattle3D.zip</p>
+                    <p class="filesize">50 MB</p>
+                    <a href="https://zip.crazycattle3d.com/CrazyCattle3D.zip" class="download-button">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+                <div class="download-card">
+                    <i class="fab fa-apple"></i>
+                    <h3>macOS</h3>
+                    <p class="filename">CrazyCattle3DMac.zip</p>
+                    <p class="filesize">78 MB</p>
+                    <a href="https://zip.crazycattle3d.com/CrazyCattle3DMac.zip" class="download-button">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+                <div class="download-card">
+                    <i class="fab fa-linux"></i>
+                    <h3>Linux</h3>
+                    <p class="filename">CrazyCattle3DLinux.zip</p>
+                    <p class="filesize">44 MB</p>
+                    <a href="https://zip.crazycattle3d.com/CrazyCattle3DLinux.zip" class="download-button">
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Game Features</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Three Unique Maps</h3>
+                    <p>Battle across Ireland, Iceland, and New Zealand, each with distinct terrain challenges.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-dice-d20"></i>
+                    <h3>Physics-Based Gameplay</h3>
+                    <p>Master momentum and collision mechanics for strategic advantage.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Quick Matches</h3>
+                    <p>30-minute average match duration perfect for casual gaming sessions.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Active Community</h3>
+                    <p>Join a growing community of players mastering sheep warfare.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section id="how-to-play" class="how-to-play">
+        <div class="container">
+            <h2>How to Play Crazy Cattle 3D</h2>
+            <div class="controls">
+                <h3>Basic Controls</h3>
+                <ul>
+                    <li><strong>WASD</strong> - Move your sheep</li>
+                    <li><strong>SPACE</strong> - Jump</li>
+                    <li><strong>SHIFT</strong> - Sprint</li>
+                    <li><strong>E</strong> - Special ability</li>
+                    <li><strong>Mouse</strong> - Look around</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are the system requirements for Windows?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Minimum requirements:<br>
+                        - Windows 10 64-bit<br>
+                        - Intel Core i5 or equivalent<br>
+                        - 8GB RAM<br>
+                        - DirectX 11 compatible GPU<br>
+                        - 2GB storage space</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are the system requirements for macOS?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Minimum requirements:<br>
+                        - macOS 10.15 or newer<br>
+                        - Apple M1 or Intel Core i5<br>
+                        - 8GB RAM<br>
+                        - Metal compatible GPU<br>
+                        - 2GB storage space</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are the system requirements for Linux?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Minimum requirements:<br>
+                        - Ubuntu 20.04 or equivalent<br>
+                        - Intel Core i5 or equivalent<br>
+                        - 8GB RAM<br>
+                        - OpenGL 4.5 compatible GPU<br>
+                        - 2GB storage space</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is there a multiplayer mode?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Crazy Cattle 3D features both online multiplayer and local split-screen modes. Online matches support up to 32 players simultaneously, while local split-screen allows 2-4 players on the same device.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does a typical match last?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A standard match typically lasts around 30 minutes, but we also offer quick-play modes that last 15 minutes and extended matches that can go up to 45 minutes. You can choose the match duration in the game settings.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are there different game modes available?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, Crazy Cattle 3D offers several game modes:<br>
+                        - Classic Battle Royale<br>
+                        - Team Deathmatch<br>
+                        - Capture the Flag<br>
+                        - Practice Mode (with AI bots)<br>
+                        - Custom Games (create your own rules)</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is there cross-platform play?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, Crazy Cattle 3D supports cross-platform play between Windows, macOS, and Linux users. Players can join matches regardless of their platform, and our matchmaking system ensures fair competition across all platforms.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How often do you release updates?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We release major updates every three months, introducing new features, maps, and gameplay elements. Bug fixes and minor improvements are released more frequently, typically every 2-3 weeks. All updates are free for all players.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guides Preview Section (Add before Footer) -->
+    <section class="guides-preview">
+        <div class="container">
+            <h2>Latest Guides</h2>
+            <div class="guides-preview-grid">
+                <div class="guide-preview-card">
+                    <img src="images/physics-system.jpg" alt="Physics-based movement and collision mechanics" />
+                    <div class="guide-preview-content">
+                        <h3>Mastering the Physics System</h3>
+                        <p>Learn advanced movement techniques and collision strategies to dominate the battlefield.</p>
+                        <a href="articles/mastering-physics.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="guide-preview-card">
+                    <img src="images/competitive-play.jpg" alt="Tournament gameplay and competitive strategies" />
+                    <div class="guide-preview-content">
+                        <h3>Competitive Strategies Guide</h3>
+                        <p>Discover high-level strategies and mental preparation for tournament success.</p>
+                        <a href="articles/competitive-strategies.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+                <div class="guide-preview-card">
+                    <img src="images/map-guide.jpg" alt="Overview of game environments" />
+                    <div class="guide-preview-content">
+                        <h3>Complete Map Guide</h3>
+                        <p>Master every environment with detailed strategies for each unique battlefield.</p>
+                        <a href="articles/map-guide.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="view-all-guides">
+                <a href="guides.html" class="cta-button">View All Guides</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Game Info</h3>
+                    <p>Crazy Cattle 3D is an innovative battle royale game featuring explosive sheep warfare across stunning landscapes.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li><a href="#download">Download</a></li>
+                        <li><a href="#how-to-play">How to Play</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="guides.html">Guides</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 crazycattle3d.shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f0f2f5;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .guide-card {
+            width: 800px;
+            height: 400px;
+            background: linear-gradient(135deg, #2a2a72 0%, #009ffd 100%);
+            border-radius: 20px;
+            padding: 2rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .guide-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 400px;
+            height: 400px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path fill="rgba(255,255,255,0.1)" d="M42.7,-73.2C55.9,-67.3,67.7,-57.1,75.6,-44.1C83.5,-31.1,87.5,-15.6,86.4,-0.6C85.3,14.3,79.1,28.6,71.2,41.8C63.3,55,53.7,67.1,41.1,74.4C28.6,81.7,14.3,84.2,-0.3,84.7C-14.9,85.2,-29.8,83.7,-43.4,77.1C-57,70.5,-69.3,58.8,-77.4,44.3C-85.5,29.8,-89.4,14.9,-88.2,0.7C-87,-13.5,-80.7,-27,-72.2,-38.8C-63.7,-50.6,-52.9,-60.7,-40.4,-67C-27.9,-73.2,-14,-75.6,0.9,-77.1C15.7,-78.6,31.4,-79.2,42.7,-73.2Z" transform="translate(100 100)" /></svg>') no-repeat center center;
+            opacity: 0.2;
+        }
+
+        .guide-card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .guide-card p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 60%;
+            line-height: 1.6;
+        }
+
+        .guide-card.advanced {
+            background: linear-gradient(135deg, #5f2c82 0%, #49a09d 100%);
+        }
+
+        .guide-card.update {
+            background: linear-gradient(135deg, #1a2a6c 0%, #b21f1f 50%, #fdbb2d 100%);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="guide-card">
+        <span class="tag">Beginner Friendly</span>
+        <h2>Getting Started with Crazy Cattle 3D</h2>
+        <p>Master the basics of the game with our comprehensive beginner's guide. Learn controls, game modes, and essential strategies to kickstart your journey.</p>
+    </div>
+
+    <div class="guide-card advanced">
+        <span class="tag">Advanced Tactics</span>
+        <h2>Advanced Combat Tactics</h2>
+        <p>Take your skills to the next level with pro strategies, advanced movement techniques, and expert combat maneuvers.</p>
+    </div>
+
+    <div class="guide-card update">
+        <span class="tag">Version 2.4.0</span>
+        <h2>Latest Update Notes</h2>
+        <p>Discover all the new features, improvements, and balance changes in our latest game update. Stay ahead of the competition!</p>
+    </div>
+</body>
+</html> 
