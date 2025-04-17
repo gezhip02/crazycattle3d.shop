@@ -1,0 +1,73 @@
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Crazy Cattle 3D",
+  "description": "Experience an exhilarating battle royale where explosive sheep compete for survival across varied terrain. Master physics-based gameplay and outmaneuver your opponents in this unique gaming experience.",
+  "image": "https://crazycattle3d.shop/images/game-screenshot.jpg",
+  "screenshot": [
+    "https://crazycattle3d.shop/images/screenshot1.jpg",
+    "https://crazycattle3d.shop/images/screenshot2.jpg",
+    "https://crazycattle3d.shop/images/screenshot3.jpg"
+  ],
+  "operatingSystem": ["Windows", "macOS", "Linux"],
+  "applicationCategory": "Game",
+  "genre": "Battle Royale",
+  "gamePlatform": ["Windows PC", "Mac", "Linux"],
+  "gameServer": "crazycattle3d.shop",
+  "numberOfPlayers": {
+    "@type": "QuantitativeValue",
+    "minValue": 1,
+    "maxValue": 32
+  },
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "price": "0",
+    "priceCurrency": "USD",
+    "url": "https://crazycattle3d.shop/download/"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "1250",
+    "reviewCount": "800",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Crazy Cattle 3D Development Team",
+    "url": "https://crazycattle3d.shop"
+  },
+  "gameLocation": [
+    {
+      "@type": "Place",
+      "name": "Ireland Map",
+      "description": "Rolling hills provide natural cover with many small buildings for close-quarter combat"
+    },
+    {
+      "@type": "Place",
+      "name": "Iceland Map",
+      "description": "Volcanic terrain creates natural barriers with steam vents for quick escapes"
+    },
+    {
+      "@type": "Place",
+      "name": "New Zealand Map",
+      "description": "Mountain ranges for vertical gameplay with dense forests for stealth approaches"
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Crazy Cattle 3D",
+    "url": "https://crazycattle3d.shop",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://crazycattle3d.shop/images/logo.png"
+    }
+  },
+  "url": "https://crazycattle3d.shop",
+  "downloadUrl": "https://download.crazycattle3d.shop/download/",
+  "playMode": ["SinglePlayer", "MultiPlayer"],
+  "datePublished": "2024-01-01",
+  "inLanguage": "en"
+} 
