@@ -13,21 +13,11 @@ export default {
 
     try {
       const url = new URL(request.url);
-      const key = url.pathname.replace('/download/', '');
+      let key = url.pathname.replace('/download/', '');
       
-      // 添加基本的路径验证
-      if (!key || key === '/') {
-        return new Response('File name is required', { 
-          status: 400,
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-          }
-        });
-      }
-
       // 检查 bucket 是否正确绑定
       if (!env.CRAZYCATTLE3D_BUCKET) {
-        return new Response('Storage configuration error', { 
+        return new Response('R2 bucket not found in environment', { 
           status: 500,
           headers: {
             'Access-Control-Allow-Origin': '*',
@@ -35,13 +25,56 @@ export default {
         });
       }
 
-      // 从 R2 获取文件
+      // 列出所有文件
+      const listed = await env.CRAZYCATTLE3D_BUCKET.list();
+      const files = listed.objects.map(obj => obj.key);
+      
+      // 返回文件列表（用于调试）
+      if (url.pathname === '/list') {
+        return new Response(JSON.stringify({
+          files: files,
+          requestedFile: key,
+          bucketExists: !!env.CRAZYCATTLE3D_BUCKET
+        }, null, 2), {
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
+          }
+        });
+      }
+
+      // 添加 downloads/ 前缀如果没有的话
+      if (!key.startsWith('downloads/')) {
+        key = 'downloads/' + key;
+      }
+
+      // 检查请求的文件是否存在
+      if (!files.includes(key)) {
+        return new Response(JSON.stringify({
+          error: 'File not found',
+          requestedFile: key,
+          availableFiles: files
+        }, null, 2), { 
+          status: 404,
+          headers: {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+          }
+        });
+      }
+
+      // 获取文件
       const object = await env.CRAZYCATTLE3D_BUCKET.get(key);
 
       if (!object) {
-        return new Response('File not found', { 
+        return new Response(JSON.stringify({
+          error: 'File not found in bucket',
+          requestedFile: key,
+          availableFiles: files
+        }, null, 2), { 
           status: 404,
           headers: {
+            'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
           }
         });
@@ -50,7 +83,7 @@ export default {
       // 设置响应头
       const headers = new Headers();
       headers.set('Content-Type', object.httpMetadata?.contentType || 'application/octet-stream');
-      headers.set('Content-Disposition', `attachment; filename="${key}"`);
+      headers.set('Content-Disposition', `attachment; filename="${key.replace('downloads/', '')}"`);
       headers.set('Access-Control-Allow-Origin', '*');
       headers.set('Cache-Control', 'public, max-age=3600');
 
@@ -58,9 +91,13 @@ export default {
         headers,
       });
     } catch (error) {
-      return new Response(`Error: ${error.message}`, { 
+      return new Response(JSON.stringify({
+        error: error.message,
+        stack: error.stack
+      }, null, 2), { 
         status: 500,
         headers: {
+          'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
         }
       });
