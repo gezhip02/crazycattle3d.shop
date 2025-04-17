@@ -196,6 +196,250 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Play Online Section Styles */
+        .play-online {
+            padding: 60px 0;
+            background: #f5f5f5;
+        }
+
+        .play-online .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .play-online h2 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .play-online p {
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .warning-note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .game-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #000;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-container iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        .game-instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .game-instructions p {
+            margin: 10px 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .game-container iframe {
+                height: 400px;
+            }
+            
+            .play-online h2 {
+                font-size: 2em;
+            }
+        }
+
+        /* Hero Section Button Styles */
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .cta-button.primary {
+            background: #8E44AD;
+            color: white;
+        }
+
+        .cta-button.primary:hover {
+            background: #9B59B6;
+        }
+
+        .cta-button.secondary {
+            background: white;
+            color: #8E44AD;
+            border: 2px solid #8E44AD;
+        }
+
+        .cta-button.secondary:hover {
+            background: #f8f9fa;
+        }
+
+        @media (max-width: 768px) {
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        /* Social Share Styles */
+        .social-share {
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .social-share p {
+            margin-bottom: 15px;
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .social-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .social-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .social-button i {
+            font-size: 1.2em;
+        }
+
+        .social-button.twitter {
+            background-color: #1DA1F2;
+        }
+
+        .social-button.facebook {
+            background-color: #4267B2;
+        }
+
+        .social-button.linkedin {
+            background-color: #0077b5;
+        }
+
+        .social-button.reddit {
+            background-color: #FF4500;
+        }
+
+        .social-button.tiktok {
+            background-color: #000000;
+        }
+
+        @media (max-width: 768px) {
+            .social-buttons {
+                gap: 10px;
+            }
+            
+            .social-button {
+                padding: 8px 15px;
+                font-size: 0.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .social-button span {
+                display: none;
+            }
+            
+            .social-button {
+                padding: 10px;
+            }
+            
+            .social-button i {
+                font-size: 1.4em;
+                margin: 0;
+            }
+        }
+
+        /* Navigation Play Now Button Style */
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-hover);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links a {
+                display: block;
+                padding: 15px 0;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -209,10 +453,11 @@
             <div class="logo">Crazy Cattle 3D</div>
             <div class="nav-links">
                 <a href="#home">Home</a>
+                <a href="#play-online">Play Now</a>
                 <a href="#download">Download Game</a>
                 <a href="#how-to-play">How to Play</a>
                 <a href="#faq">FAQ</a>
-                <a href="guides.html">Guides</a>
+                <a href="#guides-preview">Guides</a>
             </div>
             <div class="nav-right">
                 <!-- Placeholder for theme and language toggles -->
@@ -232,9 +477,66 @@
         <div class="container">
             <h1>Crazy Cattle 3D</h1>
             <p>Experience an exhilarating battle royale where explosive sheep compete for survival across varied terrain. Master physics-based gameplay and outmaneuver your opponents in this unique gaming experience.</p>
-            <button class="cta-button" id="downloadNowBtn">
-                <i class="fas fa-download"></i> Download Now
-            </button>
+            <div class="hero-buttons">
+                <button class="cta-button primary" onclick="document.getElementById('play-online').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fas fa-play"></i> Play Now
+                </button>
+                <button class="cta-button secondary" id="downloadNowBtn" onclick="document.getElementById('download').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fas fa-download"></i> Download Game
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Play Now Section -->
+    <section id="play-online" class="play-online">
+        <div class="container">
+            <h2>Play Now</h2>
+            <p>Experience Crazy Cattle 3D instantly in your browser - no download required!</p>
+            
+            <div class="warning-note">
+                ⚠️ Note: This game is not supported on mobile devices. Please use a computer for the best experience.
+            </div>
+
+            <div class="game-container">
+                <iframe 
+                    src="https://crazy-cattle3d.org/game/crazycattle3d/" 
+                    frameborder="0" 
+                    allowfullscreen
+                    id="gameFrame"
+                ></iframe>
+            </div>
+
+            <div class="social-share">
+                <div class="social-buttons">
+                    <a href="https://twitter.com/share?url=https://crazy-cattle3d.org/game/crazycattle3d/&text=Join me in playing Crazy Cattle 3D - An explosive battle royale with sheep!" target="_blank" class="social-button twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://crazy-cattle3d.org/game/crazycattle3d/" target="_blank" class="social-button facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://crazy-cattle3d.org/game/crazycattle3d/" target="_blank" class="social-button linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.reddit.com/submit?url=https://crazy-cattle3d.org/game/crazycattle3d/&title=Crazy Cattle 3D - Battle Royale Game" target="_blank" class="social-button reddit">
+                        <i class="fab fa-reddit-alien"></i>
+                        <span>Reddit</span>
+                    </a>
+                    <a href="https://www.tiktok.com/share?url=https://crazy-cattle3d.org/game/crazycattle3d/" target="_blank" class="social-button tiktok">
+                        <i class="fab fa-tiktok"></i>
+                        <span>TikTok</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="game-instructions">
+                <p>Tip: Click on the game screen to start interacting. Use WASD keys to move, mouse to control direction, and spacebar to activate special abilities.</p>
+                <p>For the best gaming experience, download the full version!</p>
+                <p>Click the fullscreen button in the top-right corner to enter fullscreen mode for a better gaming experience. Press ESC to exit fullscreen.</p>
+            </div>
         </div>
     </section>
 
@@ -423,7 +725,7 @@
     </section>
 
     <!-- Guides Preview Section (Add before Footer) -->
-    <section class="guides-preview">
+    <section id="guides-preview" class="guides-preview">
         <div class="container">
             <h2>Latest Guides</h2>
             <div class="guides-preview-grid">

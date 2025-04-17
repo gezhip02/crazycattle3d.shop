@@ -149,6 +149,13 @@
             margin-bottom: 1rem;
         }
 
+        .guide-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
         .guide-meta {
             display: flex;
             justify-content: space-between;
@@ -172,7 +179,8 @@
         }
 
         .read-more {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
@@ -181,6 +189,27 @@
 
         .read-more:hover {
             color: var(--primary-hover);
+        }
+
+        .play-now-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .play-now-button:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .play-now-button i {
+            margin-right: 0.5rem;
         }
 
         /* Responsive Design */
@@ -212,6 +241,7 @@
             <div class="logo">Crazy Cattle 3D</div>
             <div class="nav-links">
                 <a href="index.html">Home</a>
+                <a href="index.html#play-online">Play Now</a>
                 <a href="index.html#download">Download Game</a>
                 <a href="index.html#how-to-play">How to Play</a>
                 <a href="index.html#faq">FAQ</a>
@@ -251,9 +281,14 @@
                 <div class="guide-content">
                     <h2>Getting Started Guide</h2>
                     <p>New to Crazy Cattle 3D? Learn the basics of controls, game modes, and essential strategies to begin your journey.</p>
-                    <a href="articles/getting-started-guide.html" class="read-guide">
-                        Read Guide <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="guide-actions">
+                        <a href="articles/getting-started-guide.html" class="read-guide">
+                            Read Guide <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="index.html#play-online" class="play-now-button">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
                 </div>
             </article>
 
@@ -262,9 +297,14 @@
                 <div class="guide-content">
                     <h2>Advanced Combat Tactics</h2>
                     <p>Take your gameplay to the next level with pro strategies, advanced movement techniques, and combat mastery.</p>
-                    <a href="articles/advanced-tactics.html" class="read-guide">
-                        Read Guide <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="guide-actions">
+                        <a href="articles/advanced-tactics.html" class="read-guide">
+                            Read Guide <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="index.html#play-online" class="play-now-button">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
                 </div>
             </article>
 
@@ -273,9 +313,14 @@
                 <div class="guide-content">
                     <h2>Complete Map Guide</h2>
                     <p>Explore detailed strategies for every map, including power-up locations, optimal routes, and tactical positions.</p>
-                    <a href="articles/map-guide.html" class="read-guide">
-                        Read Guide <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="guide-actions">
+                        <a href="articles/map-guide.html" class="read-guide">
+                            Read Guide <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="index.html#play-online" class="play-now-button">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
                 </div>
             </article>
 
@@ -284,9 +329,14 @@
                 <div class="guide-content">
                     <h2>Latest Update Notes</h2>
                     <p>Stay informed about the newest features, balance changes, and improvements in Crazy Cattle 3D Version 2.4.0.</p>
-                    <a href="articles/update-notes.html" class="read-guide">
-                        Read Guide <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="guide-actions">
+                        <a href="articles/update-notes.html" class="read-guide">
+                            Read Guide <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="index.html#play-online" class="play-now-button">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
                 </div>
             </article>
 
@@ -295,9 +345,14 @@
                 <div class="guide-content">
                     <h2>Physics System Mastery</h2>
                     <p>Perfect your mechanical skills for tournament play with our comprehensive physics guide.</p>
-                    <a href="articles/mastering-physics.html" class="read-guide">
-                        Read Guide <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="guide-actions">
+                        <a href="articles/mastering-physics.html" class="read-guide">
+                            Read Guide <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="index.html#play-online" class="play-now-button">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
                 </div>
             </article>
 
@@ -306,9 +361,14 @@
                 <div class="guide-content">
                     <h2>Installation Guide</h2>
                     <p>Get started with a complete walkthrough of installing and setting up Crazy Cattle 3D on your system.</p>
-                    <a href="articles/installation-guide.html" class="read-guide">
-                        Read Guide <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="guide-actions">
+                        <a href="articles/installation-guide.html" class="read-guide">
+                            Read Guide <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="index.html#play-online" class="play-now-button">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
                 </div>
             </article>
 
@@ -317,9 +377,14 @@
                 <div class="guide-content">
                     <h2>Competitive Strategies</h2>
                     <p>Learn advanced tournament strategies and competitive play techniques from top players.</p>
-                    <a href="articles/competitive-strategies.html" class="read-guide">
-                        Read Guide <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="guide-actions">
+                        <a href="articles/competitive-strategies.html" class="read-guide">
+                            Read Guide <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="index.html#play-online" class="play-now-button">
+                            <i class="fas fa-play"></i> Play Now
+                        </a>
+                    </div>
                 </div>
             </article>
         </div>
